@@ -43,13 +43,20 @@ void AddGoods(BAG*bag, GOODS *g){
 
 void ShowBag(BAG *bag)
 {
-    printf("\n ====== bag:%s ======\n", bag->name);
+    printf("\n============ bag:%s ============\n", bag->name);
     printf("volume:%d\n",bag->volume);
     printf("cur_w:%d\n",bag->cur_w);
     printf("cur_v:%d\n",bag->cur_v);
     printf("cnt:%d",bag->cnt);
     printf("\n");
     
+    printf("--- (bag-goods_list:) ---\n");
+    for (short i=0; i<bag->cnt; i++) {
+        GOODS g = bag->goods_arr[i];
+        printf("goods[%s]:(w:%d  v:%d)\n", g.name, g.weight, g.value);
+    }
+    printf("============ bag:%s ============\n\n", bag->name);
+
 }
 
 

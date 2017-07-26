@@ -22,11 +22,11 @@
 #include "Goods.h"
 #include "Bag.h"
 
-#define CNT 5
+#define CNT 3
 
 
-int w[CNT] = {4,2,3,4,2};
-int v[CNT] = {3,2,6,5,1};
+int w[CNT] = {3,4,5};
+int v[CNT] = {4,5,6};
 
 char *name[20] = {"A","B","C","D","E"};
 
@@ -52,7 +52,6 @@ int main(int argc, char *argv[]) {
         
         GOODS *goods = init(w[i], v[i], name[i]);
         goods_arr[i] = *goods;
-        //printf("g%d:(%d, %d)\n",i,goods->weight,goods->volume);
     }
     
     // log初始化
@@ -63,7 +62,6 @@ int main(int argc, char *argv[]) {
     
     // 输出最优解
     ShowBag(bag);
-    descArr(bag->goods_arr, bag->cnt);
     
     return 0;
     
